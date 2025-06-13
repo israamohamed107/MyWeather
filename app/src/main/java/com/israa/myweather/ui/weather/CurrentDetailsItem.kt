@@ -22,7 +22,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.israa.myweather.domain.entity.DayTime
 import com.israa.myweather.ui.theme.UrbanistFontFamily
+import com.israa.myweather.ui.theme.WeatherThemeProvider
 
 @Composable
 fun CurrentDetailsItem(
@@ -31,8 +33,7 @@ fun CurrentDetailsItem(
     @DrawableRes icon: Int,
     title: String,
     value: String,
-    titleColor: Color,
-    valueColor: Color
+    dayTime: DayTime
 ) {
     Box(
         modifier = Modifier
@@ -58,13 +59,15 @@ fun CurrentDetailsItem(
                 text = value,
                 fontFamily = UrbanistFontFamily,
                 fontSize = 20.sp,
-                fontWeight = FontWeight.Medium
+                fontWeight = FontWeight.Medium,
+                color =  WeatherThemeProvider.getTheme(dayTime).bodyColor
             )
             Text(
                 text = title,
                 fontFamily = UrbanistFontFamily,
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Normal,
+                color =  WeatherThemeProvider.getTheme(dayTime).titleColor,
             )
         }
 

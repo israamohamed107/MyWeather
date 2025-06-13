@@ -5,120 +5,148 @@ import com.israa.myweather.R
 
 enum class WeatherCondition(
     val condition: String,
-    @DrawableRes val icon: Int
+    @DrawableRes val iconDay: Int,
+    @DrawableRes val iconNight: Int,
 ) {
 
     ClearSky(
         condition = "Clear sky",
-        icon = R.drawable.ic_clear_sky
+        iconDay = R.drawable.ic_clear_sky,
+        iconNight = R.drawable.ic_clear_sky_night,
     ),
 
     MainlyClear(
         condition = "Mainly clear",
-        icon = R.drawable.ic_mainly_clear
+        iconDay = R.drawable.ic_mainly_clear,
+        iconNight = R.drawable.ic_mainly_clear_night,
     ),
     PartlyCloudy(
         condition = "Partly cloudy",
-        icon = R.drawable.ic_partly_cloudy
+        iconDay = R.drawable.ic_partly_cloudy,
+        iconNight = R.drawable.ic_partly_cloudy_night,
     ),
     Overcast(
         condition = "Overcast",
-        icon = R.drawable.ic_overcast
+        iconDay = R.drawable.ic_overcast,
+        iconNight = R.drawable.ic_overcast_night,
     ),
     Foggy(
         condition = "Foggy",
-        icon = R.drawable.ic_foggy
+        iconDay = R.drawable.ic_foggy,
+        iconNight = R.drawable.ic_foggy_night,
     ),
     DepositingRimeFog(
         condition = "Depositing rime fog",
-        icon = R.drawable.ic_depositing_rime_fog
+        iconDay = R.drawable.ic_depositing_rime_fog,
+        iconNight = R.drawable.ic_depositing_rime_fog_night,
     ),
     LightDrizzle(
         condition = "Light drizzle",
-        icon = R.drawable.ic_drizzle_light
+        iconDay = R.drawable.ic_drizzle_light,
+        iconNight = R.drawable.ic_drizzle_light_night,
     ),
     ModerateDrizzle(
         condition = "Moderate drizzle",
-        icon = R.drawable.ic_drizzle_moderate
+        iconDay = R.drawable.ic_drizzle_moderate,
+        iconNight = R.drawable.ic_drizzle_moderate_night,
     ),
 
     DenseDrizzle(
         condition = "Dense intensity drizzle",
-        icon = R.drawable.ic_drizzle_intensity
+        iconDay = R.drawable.ic_drizzle_intensity,
+        iconNight = R.drawable.ic_drizzle_intensity_night,
     ),
     LightFreezingDrizzle(
         condition = "Slight freezing drizzle",
-        icon = R.drawable.ic_freezing_drizzle_light
+        iconDay = R.drawable.ic_freezing_drizzle_light,
+        iconNight = R.drawable.ic_freezing_drizzle_light_night,
     ),
 
     DenseFreezingDrizzle(
         condition = "Dense freezing drizzle",
-        icon = R.drawable.ic_freezing_drizzle_intensity
+        iconDay = R.drawable.ic_freezing_drizzle_intensity,
+        iconNight = R.drawable.ic_freezing_drizzle_intensity_night,
     ),
 
     SlightRain(
         condition = "Slight rain",
-        icon = R.drawable.ic_rain_slight
+        iconDay = R.drawable.ic_rain_slight,
+        iconNight = R.drawable.ic_rain_slight_night,
     ),
     ModerateRain(
         condition = "Rainy",
-        icon = R.drawable.ic_rain_moderate
+        iconDay = R.drawable.ic_rain_moderate,
+        iconNight = R.drawable.ic_rain_moderate_night,
     ),
     HeavyRain(
         condition = "Heavy rain",
-        icon = R.drawable.ic_rain_intensity
+        iconDay = R.drawable.ic_rain_intensity,
+        iconNight = R.drawable.ic_rain_intensity_night,
     ),
     HeavyFreezingRain(
         condition = "Heavy freezing rain",
-        icon = R.drawable.ic_heavy_freezing_rain
+        iconDay = R.drawable.ic_heavy_freezing_rain,
+        iconNight = R.drawable.ic_heavy_freezing_rain,
     ),
     SlightSnowFall(
         condition = "Slight snow fall",
-        icon = R.drawable.ic_snow_fall_light
+        iconDay = R.drawable.ic_snow_fall_light,
+        iconNight = R.drawable.ic_snow_fall_light_night,
     ),
     ModerateSnowFall(
         condition = "Moderate snow fall",
-        icon = R.drawable.ic_snow_fall_moderate
+        iconDay = R.drawable.ic_snow_fall_moderate,
+        iconNight = R.drawable.ic_snow_fall_moderate_night,
     ),
     HeavySnowFall(
         condition = "Heavy snow fall",
-        icon = R.drawable.ic_heavy_snow_fall
+        iconDay = R.drawable.ic_heavy_snow_fall,
+        iconNight = R.drawable.ic_heavy_snow_fall,
     ),
     SnowGrains(
         condition = "Snow grains",
-        icon = R.drawable.ic_snow_grains
+        iconDay = R.drawable.ic_snow_grains,
+        iconNight = R.drawable.ic_snow_grains_night,
     ),
     SlightRainShowers(
         condition = "Slight rain showers",
-        icon = R.drawable.ic_rain_slight
+        iconDay = R.drawable.ic_rain_slight,
+        iconNight = R.drawable.ic_rain_slight_night,
     ),
     ModerateRainShowers(
         condition = "Moderate rain showers",
-        icon = R.drawable.ic_rain_shower_moderate
+        iconDay = R.drawable.ic_rain_shower_moderate,
+        iconNight = R.drawable.ic_rain_shower_moderate_night,
     ),
     ViolentRainShowers(
         condition = "Violent rain showers",
-        icon = R.drawable.ic_violent_rain_showers
+        iconDay = R.drawable.ic_violent_rain_showers,
+        iconNight = R.drawable.ic_violent_rain_showers,
     ),
     SlightSnowShowers(
         condition = "Light snow showers",
-        icon = R.drawable.ic_snow_shower_slight
+        iconDay = R.drawable.ic_snow_shower_slight,
+        iconNight = R.drawable.ic_snow_shower_slight_night,
     ),
     HeavySnowShowers(
         condition = "Heavy snow showers",
-        icon = R.drawable.ic_snow_shower_heavy
+        iconDay = R.drawable.ic_snow_shower_heavy,
+        iconNight = R.drawable.ic_snow_shower_heavy_night,
     ),
     ModerateThunderstorm(
         condition = "Moderate thunderstorm",
-        icon = R.drawable.ic_thunder_moderate
+        iconDay = R.drawable.ic_thunder_moderate,
+        iconNight = R.drawable.ic_thunder_moderate,
     ),
     SlightHailThunderstorm(
         condition = "Thunderstorm with slight hail",
-        icon = R.drawable.ic_slight_hail_thunder_storm
+        iconDay = R.drawable.ic_slight_hail_thunder_storm,
+        iconNight = R.drawable.ic_slight_hail_thunder_storm,
     ),
     HeavyHailThunderstorm(
         condition = "Thunderstorm with heavy hail",
-        icon = R.drawable.ic_thunder_strom_with_heavy_hail
+        iconDay = R.drawable.ic_thunder_strom_with_heavy_hail,
+        iconNight = R.drawable.ic_thunder_strom_with_heavy_hail_night,
     );
 
     companion object {

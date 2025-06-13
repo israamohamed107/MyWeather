@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -37,6 +38,7 @@ import com.israa.myweather.domain.entity.WeatherForecast
 import com.israa.myweather.ui.theme.UrbanistFontFamily
 import com.israa.myweather.ui.theme.WeatherThemeProvider
 import com.israa.myweather.ui.utils.animateAlignmentAsState
+import com.israa.myweather.ui.utils.getIcon
 import com.israa.myweather.ui.utils.shadow
 
 @Composable
@@ -92,7 +94,7 @@ fun CurrentForecastCollapsable(
                         )
             ) {
                 Image(
-                    painter = painterResource(weatherData.current.weatherCondition.icon),
+                    painter = painterResource(weatherData.current.weatherCondition.getIcon(weatherData.current.dayTime)),
                     contentDescription = null,
                     modifier = Modifier.zIndex(1f)
                 )
@@ -100,7 +102,6 @@ fun CurrentForecastCollapsable(
 
             Box(
                 Modifier
-                    .padding(top = 12.dp)
                     .wrapContentSize()
                     .align(temperatureAlignment),
             ) {
@@ -111,7 +112,8 @@ fun CurrentForecastCollapsable(
                         fontFamily = UrbanistFontFamily,
                         fontSize = 64.sp,
                         fontWeight = FontWeight.SemiBold,
-                        color = WeatherThemeProvider.getTheme(weatherData.current.dayTime).headersColor
+                        color = WeatherThemeProvider.getTheme(weatherData.current.dayTime).headersColor,
+                        modifier = Modifier.offset(y = 12.dp)
                     )
                     Text(
                         text =  weatherData.current.weatherCondition.condition,

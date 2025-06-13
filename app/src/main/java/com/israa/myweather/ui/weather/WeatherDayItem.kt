@@ -27,6 +27,7 @@ import com.israa.myweather.domain.entity.DailyForecast
 import com.israa.myweather.domain.entity.DayTime
 import com.israa.myweather.ui.theme.UrbanistFontFamily
 import com.israa.myweather.ui.theme.WeatherThemeProvider
+import com.israa.myweather.ui.utils.getIcon
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
@@ -51,7 +52,7 @@ fun WeatherDayItem(
         )
 
         Image(
-            painter = painterResource(day.weatherCondition.icon),
+            painter = painterResource(day.weatherCondition.getIcon(dayTime)),
             contentDescription = "Weather Icon",
             modifier = Modifier.size(32.dp)
 

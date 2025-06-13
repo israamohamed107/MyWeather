@@ -42,6 +42,7 @@ import com.israa.myweather.domain.entity.WeatherCondition
 import com.israa.myweather.domain.entity.WeatherForecast
 import com.israa.myweather.ui.theme.UrbanistFontFamily
 import com.israa.myweather.ui.theme.WeatherThemeProvider
+import com.israa.myweather.ui.utils.getIcon
 import org.koin.androidx.compose.koinViewModel
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -118,8 +119,7 @@ private fun WeatherContent(
                     icon = R.drawable.ic_fast_wind,
                     title = "Wind",
                     value = "${weatherData.current.windSpeed} ${weatherData.current.windSpeedUnit}",
-                    titleColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).titleColor,
-                    valueColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).bodyColor
+                   dayTime = weatherData.current.dayTime
                 )
 
                 CurrentDetailsItem(
@@ -128,8 +128,7 @@ private fun WeatherContent(
                     icon = R.drawable.ic_humidity,
                     title = "Humidity",
                     value = "${weatherData.current.humidity} ${weatherData.current.humidityUnit}",
-                    titleColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).titleColor,
-                    valueColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).bodyColor
+                    dayTime = weatherData.current.dayTime
                 )
 
                 CurrentDetailsItem(
@@ -138,8 +137,7 @@ private fun WeatherContent(
                     icon = R.drawable.ic_rain,
                     title = "Rain",
                     value = "${weatherData.current.rain} ${weatherData.current.rainUnit}",
-                    titleColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).titleColor,
-                    valueColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).bodyColor
+                    dayTime = weatherData.current.dayTime
                 )
             }
 
@@ -155,8 +153,7 @@ private fun WeatherContent(
                     icon = R.drawable.ic_fast_wind,
                     title = "UV index",
                     value = "${weatherData.current.uvIndex} ${weatherData.current.uvIndexUnit}",
-                    titleColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).titleColor,
-                    valueColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).bodyColor
+                    dayTime = weatherData.current.dayTime
                 )
 
                 CurrentDetailsItem(
@@ -165,8 +162,7 @@ private fun WeatherContent(
                     icon = R.drawable.ic_humidity,
                     title = "Pressure",
                     value = "${weatherData.current.pressure} ${weatherData.current.pressureUnit}",
-                    titleColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).titleColor,
-                    valueColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).bodyColor
+                    dayTime = weatherData.current.dayTime
                 )
 
                 CurrentDetailsItem(
@@ -175,8 +171,7 @@ private fun WeatherContent(
                     icon = R.drawable.ic_rain,
                     title = "Feels like",
                     value = "${weatherData.current.feelsLikeTemperature} ${weatherData.current.feelsLikeTemperatureUnit}",
-                    titleColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).titleColor,
-                    valueColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).bodyColor
+                    dayTime = weatherData.current.dayTime
                 )
             }
 
@@ -187,7 +182,8 @@ private fun WeatherContent(
                 fontWeight = FontWeight.SemiBold,
                 modifier = Modifier
                     .padding(start = 12.dp)
-                    .fillMaxWidth()
+                    .fillMaxWidth(),
+                color = WeatherThemeProvider.getTheme(weatherData.current.dayTime).titleColor
             )
 
             LazyRow(
@@ -201,7 +197,7 @@ private fun WeatherContent(
                     TodayItem(
                         cardBackground = WeatherThemeProvider.getTheme(weatherData.current.dayTime).mainColor,
                         borderColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).borderColor,
-                        icon = item.weatherCondition.icon,
+                        icon = item.weatherCondition.getIcon(weatherData.current.dayTime),
                         temperature = "${item.temperature} ${item.temperatureUnit}",
                         time = item.time.format(DateTimeFormatter.ofPattern("HH:mm")),
                         temperatureColor = WeatherThemeProvider.getTheme(weatherData.current.dayTime).headersColor,
@@ -218,7 +214,8 @@ private fun WeatherContent(
                 fontWeight = FontWeight.SemiBold,
                 modifier = Modifier
                     .padding(start = 12.dp, top = 24.dp)
-                    .fillMaxWidth()
+                    .fillMaxWidth(),
+                color = WeatherThemeProvider.getTheme(weatherData.current.dayTime).titleColor
             )
 
             Column(
